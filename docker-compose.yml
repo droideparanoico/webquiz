@@ -1,0 +1,15 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+
+version: '3.8'
+
+# Define services
+services:
+  # Engine service
+  engine:
+    # Configuration for building the docker image for the engine service
+    build:
+      context: ./ # Use an image built from the specified dockerfile in the root directory.
+      dockerfile: Dockerfile
+    ports:
+      - "8889:8889" # Forward the exposed port 8889 on the container to port 8889 on the host machine
+    restart: always

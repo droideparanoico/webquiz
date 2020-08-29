@@ -1,5 +1,7 @@
 # WebQuizEngine
-Spring Boot web service to create and solve quizzes using a REST API.
+Spring Boot web service to create and solve quizzes via REST API using Docker as deployment tool.
+
+![](src/main/resources/banner.png)
 ## Register user
 To register a new user send a JSON with `email` and `password` via `POST` request to `/api/register`:
 ``` json

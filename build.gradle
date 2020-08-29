@@ -7,6 +7,15 @@ apply plugin: 'io.spring.dependency-management'
 
 sourceCompatibility = '11'
 
+task fullJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'WebQuizEngine Jar File',
+                   'Main-Class': 'org.hyperskill.webquiz.engine.WebQuizEngine'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 repositories {
     mavenCentral()
 }
